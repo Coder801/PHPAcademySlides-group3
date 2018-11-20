@@ -59,6 +59,7 @@
         <h2>План урока</h2>
         <ol>
             <li>Как работает интернет</li>
+            <li>Передача данных при помощи интернет</li>
         </ol>
     </section>
 
@@ -154,47 +155,6 @@
         </style>
     </section>
 
-    <section class="slide" id="what-internet-3">
-        <h2>Что такое Интернет?</h2>
-        <div class="canvas">
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>31.13.81.36</em></p>
-            <p>facebook.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>216.58.215.78</em></p>
-            <p>google.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>56.58.12.73</em></p>
-            <p>amazon.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>112.18.12.23</em></p>
-            <p>ebay.com</p>
-          </div>
-        </div>
-
-        <style>
-          #what-internet-3 .canvas {
-            display: flex;
-            width: 100%;
-            height: 400px;
-            position: relative;
-            justify-content: space-between;
-            margin-top: 40px;
-          }
-          #what-internet-3 .canvas p {
-            margin: 0;
-            text-align: center;
-          }
-        </style>
-    </section>
-
     <section class="slide" id="what-internet-4">
         <h2>Что такое Интернет?</h2>
         <div class="canvas">
@@ -263,58 +223,121 @@
     <section class="slide">
         <h2>Что такое Интернет?</h2>
         <center>
-            <img width="500" src="./pictures/client-server-model.png" alt="">
+            <img width="600" src="./pictures/client-server-model.png" alt="">
         </center>
     </section>
 
     <section class="slide">
-        <h2>Code samples</h2>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
+        <h2>Как передаются данные?</h2>
+        <center style="margin-top: 40px">
+            <img width="600" src="./pictures/internet-schema-1.png" alt="">
+        </center>
+        <p style="margin-top: 20px">Когда нужно связать между собой два компьютера, вы должны связать их в сеть либо проводным обычно с помощью Ethernet кабеля, либо беспроводным способом например, с помощью WiFi или Bluetooth.</p>
     </section>
 
     <section class="slide">
-        <h2>Even tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
+        <h2>Как передаются данные?</h2>
+        <div class="columns two">
+          <p><img width="400" src="./pictures/internet-schema-2.png" alt=""></p>
+          <p style="margin-top: 20px">Что будет если их будет больше? <br>Например для 10 компьютеров, вам понадобится 45 кабелей и 9 сетевых плат в каждом компьютере.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two">
+          <p><img width="400" src="./pictures/internet-schema-3.png" alt=""></p>
+          <p style="margin-top: 20px">Для таких вещей нам пригодиться маршрутизатор.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 100px">
+          <p>
+            <img width="400" src="./pictures/internet-schema-4.png" alt="">
+          </p>
+          <p style="margin-top: 20px">Можем так же соединить друг с другом два маршрутизатора.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 40px">
+          <p>
+            <img width="400" src="./pictures/internet-schema-5.png" alt="">
+          </p>
+          <p style="margin-top: 20px">Подключая компьютеры к маршрутизатору, а затем маршрутизатор к другому маршрутизатору, мы можем увеличивать нашу сеть до сколь угодно больших размеров.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 40px;  grid-template-columns: 1fr 2fr;">
+          <p>
+            <img width="140" style="margin: 0 auto; display: block;" src="./pictures/internet-schema-6.png" alt="">
+          </p>
+          <p><small>Следующий шаг — передать сообщение из нашей сети в сеть, с которой мы хотим связаться. Чтобы сделать это, мы должны подключить нашу сеть к провайдеру услуг интернета <strong>ISP</strong> (Internet Service Provider). <br>Таким образом, наше сообщение, пройдя транзитом через сеть нескольких провайдеров, достигнет сеть назначения.</small></p>
+        </div>
+    </section>
+
+    <section class="slide" id="what-internet-3">
+        <h2>Поиск устройства</h2>
+        <p><small>Для того что б можно было обратится к устройству он должен иметь адресс</small></p>
+        <div class="canvas">
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>31.13.81.36</em></p>
+            <p>facebook.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>216.58.215.78</em></p>
+            <p>google.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>56.58.12.73</em></p>
+            <p>amazon.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>112.18.12.23</em></p>
+            <p>ebay.com</p>
+          </div>
+        </div>
+
+        <style>
+          #what-internet-3 .canvas {
+            display: flex;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            justify-content: space-between;
+            margin-top: 40px;
+          }
+          #what-internet-3 .canvas p {
+            margin: 0;
+            text-align: center;
+          }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Поиск устройства</h2>
+        <p>Основные понятия при адресации</p>
+        <ul>
+          <li><small><strong>IP</strong> <em>(Internet Protocol Address)</em> - уникальный адрес в сети, необходимый для нахождения, передачи и получения информации от одного компьютера (узла) к другому.</small></li>
+          <li><small><strong>MAC-address</strong> <em>(Media Access Control)</em> - это физический адрес сетевого устройства жестко с ним связанный.</small></li>
+          <li><small><strong>DNS</strong> <em>(Domain Name System)</em> - Система доменных имён. Компьютерная распределённая система для получения информации о доменах.</small></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Подробнее про DNS</h2>
+        <center>
+          <img width="700" style="position: relative; top: -20px" src="./pictures/DNS.jpg" alt="">
+        </center>
     </section>
 
     <section class="slide" id="picture">
