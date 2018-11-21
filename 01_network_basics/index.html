@@ -49,42 +49,49 @@
         <p>Network Basics, HTTP, Protocols</p>
     </header>
 
-    <section class="slide" id="cover">
-        <h2>Shower Presentation Engine</h2>
-        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-        <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
-        <style>
-            #cover h2 {
-                margin: 30px 0 0;
-                color: white;
-                text-align: center;
-                font-size: 70px;
-            }
-
-            #cover p {
-                margin: 10px 0 0;
-                text-align: center;
-                color: white;
-                font-style: italic;
-                font-size: 20px;
-            }
-
-            #cover p a {
-                color: white;
-            }
-        </style>
+    <section class="slide" id="personal">
+      <img src="./pictures/photo.jpeg" alt="">
+      <div class="info">
+        <h3>Дмитрий Онищенко</h3>
+        <p>Frontend develope в компании Zeo Alliance</p>
+        <p>Более 7 лет занимаюсь разработкой и изучаю веб технологии</p>
+        <p>Контакты:</p>
+        <p><small><span>telegram:</span> +380636126197</small></p>
+        <p><small><span>email:</span> donischenko801@gmail.com</small></p>
+      </div>
+      <style>
+        #personal img {
+          width: 300px;
+          float: left;
+          margin-right: 40px;
+        }
+        #personal .info {
+        }
+        #personal .info h3 {
+          font-size: 34px;
+          font-weight: 600;
+        }
+        #personal .info p {
+          line-height: 1.4;
+        }
+        #personal .info p span {
+          color: #999;
+        }
+      </style>
     </section>
 
     <section class="slide">
         <h2>План урока</h2>
-        <ol>
-            <li>Как работает интернет</li>
+        <ol style="font-size: 22px; margin-left: 20px;">
+            <li>Что такое Интернет</li>
+            <li>Как интернет работает</li>
+            <li>Как передаются данные</li>
             <li>Передача данных при помощи интернет</li>
+            <li>Поиск устройства</li>
+            <li>Что такое DNS</li>
+            <li>Протокол HTTP</li>
+            <li>URL, URN, URI</li>
+            <li>Практика, Rest API</li>
         </ol>
     </section>
 
@@ -607,23 +614,6 @@ Connection: close
       </div>
     	<p class=" next" style="font-size: 17px;">Но есть небольшая проблема с применением REST на практике. Проблема называется HTML.</p>
   	</section>
-
-    <section class="slide" id="see-more">
-        <h2 class="shout">
-            <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
-        </h2>
-        <style>
-            #see-more h2 {
-                font-size: 100px
-            }
-
-            #see-more img {
-                width: 0.72em;
-                height: 0.72em;
-            }
-        </style>
-    </section>
 
     <footer class="badge">
         <a href="https://github.com/shower/shower">Fork me on GitHub</a>
