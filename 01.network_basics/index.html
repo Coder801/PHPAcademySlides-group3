@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-ribbon/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+	  <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -15,6 +17,29 @@
         .slide {
           padding-top: 40px;
         }
+        .slide pre code {
+					background-color: #282c34;
+				}
+				.hljs-doctag, .hljs-keyword, .hljs-formula {
+				    color: rgb(198, 120, 221) !important;
+				}
+				.mark {
+					    background: #fafaa2;
+					    padding: 1px 5px;
+					    border-radius: 4px;
+				}
+				.mark-red {
+					    background: #CC0000;
+					    padding: 1px 5px;
+					    border-radius: 4px;
+					    color: #fff;
+				}
+        .text-gray {
+					color: gray;
+				}
+        .text-blue {
+					color: #4b86c2;
+				}
     </style>
 </head>
 <body class="shower list">
@@ -24,41 +49,49 @@
         <p>Network Basics, HTTP, Protocols</p>
     </header>
 
-    <section class="slide" id="cover">
-        <h2>Shower Presentation Engine</h2>
-        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-        <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
-        <style>
-            #cover h2 {
-                margin: 30px 0 0;
-                color: white;
-                text-align: center;
-                font-size: 70px;
-            }
-
-            #cover p {
-                margin: 10px 0 0;
-                text-align: center;
-                color: white;
-                font-style: italic;
-                font-size: 20px;
-            }
-
-            #cover p a {
-                color: white;
-            }
-        </style>
+    <section class="slide" id="personal">
+      <img src="./pictures/photo.jpeg" alt="">
+      <div class="info">
+        <h3>Дмитрий Онищенко</h3>
+        <p>Frontend develope в компании Zeo Alliance</p>
+        <p>Более 7 лет занимаюсь разработкой и изучаю веб технологии</p>
+        <p>Контакты:</p>
+        <p><small><span>telegram:</span> +380636126197</small></p>
+        <p><small><span>email:</span> donischenko801@gmail.com</small></p>
+      </div>
+      <style>
+        #personal img {
+          width: 300px;
+          float: left;
+          margin-right: 40px;
+        }
+        #personal .info {
+        }
+        #personal .info h3 {
+          font-size: 34px;
+          font-weight: 600;
+        }
+        #personal .info p {
+          line-height: 1.4;
+        }
+        #personal .info p span {
+          color: #999;
+        }
+      </style>
     </section>
 
     <section class="slide">
         <h2>План урока</h2>
-        <ol>
-            <li>Как работает интернет</li>
+        <ol style="font-size: 22px; margin-left: 20px;">
+            <li>Что такое Интернет</li>
+            <li>Как интернет работает</li>
+            <li>Как передаются данные</li>
+            <li>Передача данных при помощи интернет</li>
+            <li>Поиск устройства</li>
+            <li>Что такое DNS</li>
+            <li>Протокол HTTP</li>
+            <li>URL, URN, URI</li>
+            <li>Практика, Rest API</li>
         </ol>
     </section>
 
@@ -154,47 +187,6 @@
         </style>
     </section>
 
-    <section class="slide" id="what-internet-3">
-        <h2>Что такое Интернет?</h2>
-        <div class="canvas">
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>31.13.81.36</em></p>
-            <p>facebook.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>216.58.215.78</em></p>
-            <p>google.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>56.58.12.73</em></p>
-            <p>amazon.com</p>
-          </div>
-          <div class="server">
-            <img src="./pictures/server.jpg" alt="">
-            <p><em>112.18.12.23</em></p>
-            <p>ebay.com</p>
-          </div>
-        </div>
-
-        <style>
-          #what-internet-3 .canvas {
-            display: flex;
-            width: 100%;
-            height: 400px;
-            position: relative;
-            justify-content: space-between;
-            margin-top: 40px;
-          }
-          #what-internet-3 .canvas p {
-            margin: 0;
-            text-align: center;
-          }
-        </style>
-    </section>
-
     <section class="slide" id="what-internet-4">
         <h2>Что такое Интернет?</h2>
         <div class="canvas">
@@ -263,106 +255,365 @@
     <section class="slide">
         <h2>Что такое Интернет?</h2>
         <center>
-            <img width="500" src="./pictures/client-server-model.png" alt="">
+            <img width="600" src="./pictures/client-server-model.png" alt="">
         </center>
     </section>
 
     <section class="slide">
-        <h2>Code samples</h2>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
+        <h2>Как передаются данные?</h2>
+        <center style="margin-top: 40px">
+            <img width="600" src="./pictures/internet-schema-1.png" alt="">
+        </center>
+        <p style="margin-top: 20px">Когда нужно связать между собой два компьютера, вы должны связать их в сеть либо проводным обычно с помощью Ethernet кабеля, либо беспроводным способом например, с помощью WiFi или Bluetooth.</p>
     </section>
 
     <section class="slide">
-        <h2>Even tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
+        <h2>Как передаются данные?</h2>
+        <div class="columns two">
+          <p><img width="400" src="./pictures/internet-schema-2.png" alt=""></p>
+          <p style="margin-top: 20px">Что будет если их будет больше? <br>Например для 10 компьютеров, вам понадобится 45 кабелей и 9 сетевых плат в каждом компьютере.</p>
+        </div>
     </section>
 
-    <section class="slide" id="picture">
-        <h2>Pictures</h2>
-        <figure>
-            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two">
+          <p><img width="400" src="./pictures/internet-schema-3.png" alt=""></p>
+          <p style="margin-top: 20px">Для таких вещей нам пригодиться маршрутизатор.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 100px">
+          <p>
+            <img width="400" src="./pictures/internet-schema-4.png" alt="">
+          </p>
+          <p style="margin-top: 20px">Можем так же соединить друг с другом два маршрутизатора.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 40px">
+          <p>
+            <img width="400" src="./pictures/internet-schema-5.png" alt="">
+          </p>
+          <p style="margin-top: 20px">Подключая компьютеры к маршрутизатору, а затем маршрутизатор к другому маршрутизатору, мы можем увеличивать нашу сеть до сколь угодно больших размеров.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Как передаются данные?</h2>
+        <div class="columns two" style="margin-top: 40px;  grid-template-columns: 1fr 2fr;">
+          <p>
+            <img width="140" style="margin: 0 auto; display: block;" src="./pictures/internet-schema-6.png" alt="">
+          </p>
+          <p><small>Следующий шаг — передать сообщение из нашей сети в сеть, с которой мы хотим связаться. Чтобы сделать это, мы должны подключить нашу сеть к провайдеру услуг интернета <strong>ISP</strong> (Internet Service Provider). <br>Таким образом, наше сообщение, пройдя транзитом через сеть нескольких провайдеров, достигнет сеть назначения.</small></p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Передача данных</h2>
+        <p><small>Данные передаются в виде пакетов. Сначала даннные разбиваются и на компьюторе адресатора восстонавливаются</small></p>
+        <div class="canvas" id="trace">
+          <div class="arrow"></div>
+          <div class="data">
+            <div class="fraction one"></div>
+            <div class="fraction two"></div>
+            <div class="fraction three"></div>
+            <div class="fraction four"></div>
+          </div>
+          <div class="data animate">
+            <div class="fraction one"></div>
+            <div class="fraction two"></div>
+            <div class="fraction three"></div>
+            <div class="fraction four"></div>
+          </div>
+        </div>
+        <p><small>IP-пакеты состоят из заголовка и полезной нагрузки.</small></p>
         <style>
-            #picture h2 {
-                color: white;
+            #trace .arrow {
+              height: 10px;
+              width: 40%;
+              background-color: #999;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            #trace .arrow:before {
+              content: '';
+              width: 0px;
+              height: 0px;
+              display: block;
+              top: 50%;
+              position: absolute;
+              right: 0;
+              transform: translateY(-50%) rotate(-45deg);
+              border: solid #999;
+              border-width: 0 10px 10px 0;
+              display: inline-block;
+              padding: 10px;
+            }
+            #trace {
+              width: 100%;
+              height: 200px;
+              position: relative;
+            }
+            #trace .data {
+              width: 200px;
+              height: 166px;
+              position: absolute;
+            }
+            #trace .fraction {
+              width: 100px;
+              height: 84px;
+              position: absolute;
+              background-size: 200% !important;
+              background-repeat: no-repeat;
+              background: url('./pictures/cat.jpg');
+            }
+
+            #trace .fraction.one {
+              top: 0;
+              left: 0;
+              background-position: 0 0;
+            }
+            #trace .fraction.two {
+              top: 0;
+              left: 100px;
+              background-position: right top;
+            }
+            #trace .fraction.three {
+              top: 84px;
+              left: 0px;
+              background-position: left bottom;
+            }
+            #trace .fraction.four {
+              top: 84px;
+              left: 100px;
+              background-position: right bottom;
+            }
+            #trace .animate .fraction {
+              animation: move 2s ease-in-out;
+              animation-fill-mode: forwards;
+            }
+            #trace .animate .fraction.one {
+              animation-delay: 9s;
+            }
+            #trace .animate .fraction.two {
+              animation-delay: 3s;
+            }
+            #trace .animate .fraction.three {
+              animation-delay: 12s;
+            }
+            #trace .animate .fraction.four {
+              animation-delay: 6s;
+            }
+
+            @keyframes move {
+              from {
+                transform: translate(0);
+              }
+              to {
+                transform: translate(630px);
+              }
             }
         </style>
     </section>
 
-    <section class="slide">
-        <h2 class="shout shrink">You can even shout this way</h2>
-    </section>
+    <section class="slide" id="what-internet-3">
+        <h2>Поиск устройства</h2>
+        <p><small>Для того что б можно было обратится к устройству он должен иметь адресс</small></p>
+        <div class="canvas">
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>31.13.81.36</em></p>
+            <p>facebook.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>216.58.215.78</em></p>
+            <p>google.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>56.58.12.73</em></p>
+            <p>amazon.com</p>
+          </div>
+          <div class="server">
+            <img src="./pictures/server.jpg" alt="">
+            <p><em>112.18.12.23</em></p>
+            <p>ebay.com</p>
+          </div>
+        </div>
 
-    <section class="slide">
-        <h2>Inner navigation</h2>
-        <ol>
-            <li>Lets you reveal list items one by one</li>
-            <li class="next">To keep some key points</li>
-            <li class="next">In secret from audience</li>
-            <li class="next">But it will work only once</li>
-            <li class="next">Nobody wants to see the same joke twice</li>
-        </ol>
-    </section>
-
-    <section class="slide" id="see-more">
-        <h2 class="shout">
-            <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
-        </h2>
         <style>
-            #see-more h2 {
-                font-size: 100px
-            }
-
-            #see-more img {
-                width: 0.72em;
-                height: 0.72em;
-            }
+          #what-internet-3 .canvas {
+            display: flex;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            justify-content: space-between;
+            margin-top: 40px;
+          }
+          #what-internet-3 .canvas p {
+            margin: 0;
+            text-align: center;
+          }
         </style>
     </section>
+
+    <section class="slide">
+        <h2>Поиск устройства</h2>
+        <p>Основные понятия при адресации</p>
+        <ul>
+          <li><small><strong>IP</strong> <em>(Internet Protocol Address)</em> - уникальный адрес в сети, необходимый для нахождения, передачи и получения информации от одного компьютера (узла) к другому.</small></li>
+          <li><small><strong>MAC-address</strong> <em>(Media Access Control)</em> - это физический адрес сетевого устройства жестко с ним связанный.</small></li>
+          <li><small><strong>DNS</strong> <em>(Domain Name System)</em> - Система доменных имён. Компьютерная распределённая система для получения информации о доменах.</small></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Подробнее про DNS</h2>
+        <center>
+          <img width="700" style="position: relative; top: -20px" src="./pictures/DNS.jpg" alt="">
+        </center>
+    </section>
+
+    <section class="slide">
+  		<h2>Протокол HTTP</h2>
+  		<p style="font-size: 20px"><strong>HTTP</strong> (HyperText Transfer Protocol) - Этот протокол описывает взаимодействие между двумя компьютерами (клиентом и сервером), построенное на базе сообщений, называемых запрос (Request) и ответ (Response).</p>
+  		<center class="next">
+  			<img src="./pictures/HTTP.png" alt="">
+  		</center>
+  	</section>
+
+    <section class="slide">
+  		<h2>Как работает HTTP соединение</h2>
+  		<p style="font-size: 26px;">Запрос происходит в несколько этапов:</p>
+  		<p class="double">
+  		<ol style="font-size: 20px">
+  			<li class="next">Очередь</li>
+  			<li class="next">DNS-запрос — поиск ближайшего DNS-сервера</li>
+  			<li class="next">Отправка данных (Request)</li>
+  			<li class="next">Ожидание ответа (TTFB)</li>
+  			<li class="next">Получение данных. (Response)</li>
+  		</ol>
+  		<img class="next" style="position: absolute; top: 200px; right: 60px; box-shadow: 0 0 20px 0 rgba(0,0,0,.3)" src="pictures/http-connect.jpg" alt="">
+  		<p class="next" style="font-size: 18px"><a href="http://xafari.ru/obzor-instrumentov-dlya-analiza-proizvoditelnosti-part-1.html" target="_blank">Инструменты для анализа производительности</a></p>
+	  </section>
+
+    <section class="slide">
+		  <h2>Пример запроса</h2>
+		  <pre>
+			<code class="http">
+GET /index.php HTTP/1.1
+Host: example.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept: text/html
+Accept-Language: en-us,en;q=0.5
+Connection: close
+			</code>
+		  </pre>
+	  </section>
+
+    <section class="slide">
+  		<h2>Пример ответа</h2>
+  		<pre>
+  		<code class="http" style="font-size: 16px !important;">
+  HTTP/1.x 200 OK
+  Server: nginx/0.6.31
+  Content-Language: ru
+  Content-Type: text/html; charset=utf-8
+  Content-Length: 1234
+  Connection: close
+  {
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;results&quot;: [
+      {&quot;value&quot;: 1.0e+3, &quot;type&quot;: &quot;decimal&quot;}
+    ]
+  }
+
+  </code>
+  		</pre>
+  		<p><a href="https://code.tutsplus.com/ru/tutorials/http-headers-for-dummies--net-8039" target="_blank">Подробнее про заголовки</a></p>
+  	</section>
+
+    <section class="slide">
+  		<h2>Список кодов состояния HTTP</h2>
+      <ul>
+        <li><strong>1xx:</strong> Informational (информационные)</li>
+        <li><strong>2xx:</strong> Success (успешно)</li>
+        <li><strong>3xx:</strong> Redirection (перенаправление)</li>
+        <li><strong>4xx:</strong> Client Error (ошибка клиента)</li>
+        <li><strong>5xx:</strong> Server Error (ошибка сервера)</li>
+      </ul>
+  	</section>
+
+    <section class="slide">
+  		<h2>Методы HTTP</h2>
+  		<p><small>Метод указывает какая операция будет производится над ресурсом. <br>В спецификации <strong>HTTP 1.1</strong> определены следующие методы: <br><span class="mark">OPTIONS,</span>   <span class="mark">GET</span> <span class="mark">HEAD</span> <span class="mark">POST</span> <span class="mark">PUT</span> <span class="mark">PATCH</span> <span class="mark">DELETE</span> <span class="mark">TRACE</span> <span class="mark">LINK</span> <span class="mark">UNLINK.</span> </small></p>
+  		<p><small>HTTP методы составляют основную часть <strong>"единого интерфейса"</strong>, ограничивающего и предоставляющего возможность осуществлять действия над существительным-ресурсом.</small></p>
+  		<p><a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Methods" target="_blank">Подробнее о методах</a></p>
+  	</section>
+
+    <section class="slide">
+  		<h2>Структура HTTP запроса?</h2>
+  		<p style="font-size: 26px;margin-top: 70px">Cообщение состоит из трех частей.</p>
+  		<ul style="font-size: 26px">
+  			<li><strong>Строка запроса*</strong> — метод запроса (HTTP-метод), URI, версия протокола</li>
+  			<li><strong>Заголовки</strong> — набор пар имя-значение. В заголовках передается различная служебная информация (<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%BE%D0%B2_HTTP#%D0%97%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BA%D0%B8_%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0" target="_blank">Список заголовков</a>)</li>
+  			<li><strong>Тело сообщения</strong> — данные сообщения</li>
+  		</ul>
+  	</section>
+
+    <section class="slide">
+  		<h2>Основные HTTP методы</h2>
+  		<p style="font-size: 20px;"><strong>Метод GET</strong> — используется для запроса содержимого указанного ресурса. Это с его помощью браузер получает HTML код конкретной страницы и все ее объекты (изображения, CSS и т.п)</p>
+  		<p style="font-size: 20px;"><strong>Метод POST</strong> — предназначен для передачи данных на сервер. Тело такого запроса обычно содержит данные. Сообщение ответа сервера на выполнение метода POST не кэшируется</p>
+  		<p style="font-size: 20px;"><strong>Метод HEAD</strong> — Аналогичен GET. Запрашивает только информацию заголовка о файле или ресурсе</p>
+  		<p style="font-size: 20px;"><a href="https://www.w3.org/TR/cors/#terminology" target="_blank">Подробнее о простых запросах</a></p>
+  	</section>
+
+  	<section class="slide">
+  		<h2>Основные HTTP методы</h2>
+  		<p style="font-size: 18px;"><strong>Метод PUT</strong> — служит для обновления ресурса. Тело запроса при отправке PUT-запроса к существующему ресурсу URI должно содержать обновленные данные оригинального ресурса</p>
+  		<p style="font-size: 18px;"><strong>Meтод DELETE</strong> — используется для удаления ресурса, идентифицированного конкретным URI (ID)</p>
+  		<p style="font-size: 18px;"><strong>Meтод PATCH</strong> — Аналогично PUT, но применяется только к фрагменту ресурса.</p>
+  		<p style="font-size: 18px;"><strong>Meтод TRACE</strong> — Возвращает полученный запрос так, что клиент может увидеть, какую информацию промежуточные серверы добавляют или изменяют в запросе.</p>
+  		<p style="font-size: 18px;"><strong>Meтод CONNECT</strong> — Преобразует соединение запроса в прозрачный TCP/IP-туннель, обычно чтобы содействовать установлению защищённого SSL-соединения через нешифрованный прокси.</p>
+  	</section>
+
+    <section class="slide">
+      <h2>Идентефикация ресурса</h2>
+      <ul style="margin-bottom: 0">
+        <li><strong>URI</strong> (Uniform Resource Identifier) - единообразный идентификатор ресурса.</li>
+        <li><strong>URN</strong> (Uniform Resource Name) - единообразное имя ресурса</li>
+        <li><strong>URL</strong> (Uniform Resource Locator) -  eдинообразный локатор (определитель местонахождения) ресурса</li>
+      </ul>
+      <center>
+        <img style="width: 400px" src="./pictures/urn.svg.png" alt="">
+      </center>
+    </section>
+
+    <section class="slide">
+      <h2>Структура URL</h2>
+      <center>
+        <img src="./pictures/url-structure.jpg" alt="">
+      </center>
+    </section>
+
+    <section class="slide">
+  		<h2>Rest API</h2>
+      <p style="font-size: 17px;"><strong>REST</strong> (Representational state transfer) - Названия группы принципов построения веб-приложений. </p>
+      <div class="columns two next">
+        <p class="" style="font-size: 17px;"> Предлагает отказаться от использования одинаковых URI для разных ресурсов (то есть адреса двух разных статей вроде <span class="text-blue">/index.php?article_id=10</span> и <span class="text-blue">/index.php?article_id=20</span>) и использовать разные HTTP-методы для разных действий </p>
+        <p><img src="./pictures/rest.png" alt="" style="margin-top: 20px"></p>
+      </div>
+    	<p class=" next" style="font-size: 17px;">Но есть небольшая проблема с применением REST на практике. Проблема называется HTML.</p>
+  	</section>
 
     <footer class="badge">
         <a href="https://github.com/shower/shower">Fork me on GitHub</a>
@@ -372,6 +623,8 @@
 
     <script src="node_modules/shower-core/shower.min.js"></script>
     <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	  <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
