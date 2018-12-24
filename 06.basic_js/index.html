@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Основы HTML</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+	<style>
+			.shower {
+					--slide-ratio: calc(16 / 9);
+			}
+	</style>
+</head>
+<body class="shower list">
+
+	<style media="screen">
+		html {
+			font-size: 16px;
+		}
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		h1 {
+		  font-size: 3rem;
+		}
+		h2 {
+		  font-size: 2.5rem;
+		}
+		h3 {
+		  font-size: 2rem;
+		}
+		small {
+			font-size: 75%;
+			opacity: .7;
+		}
+		.text-center {
+			text-align: center;
+		}
+		.shower.full .slide . {
+			opacity: 0;
+			-webkit-transform: translateY(-50px);
+			-ms-transform: translateY(-50px);
+			transform: translateY(-50px);
+			-webkit-transition: .6s ease;
+			-o-transition: .6s ease;
+			transition: .6s ease;
+		}
+		.shower.full .slide ..active {
+			opacity: 1;
+			-webkit-transform: translateY(0);
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+		}
+		.slide mark.important {
+		    background: #c00;
+		    color: #fff;
+		}
+		.selector {
+			color: #365dcd;
+		}
+		.property {
+			color: #ff0000;
+		}
+		.value {
+			color: #c000cc;
+		}
+	</style>
+
+	<header class="caption">
+		<h1>Основы JS</h1>
+		<p>Онищенко Дмитрий</p>
+	</header>
+
+	<section class="slide index" id="cover">
+		<h2 class="shout shrink">Основы JS</h2>
+		<figure>
+			<img class="cover" src="pictures/cover.png" alt="">
+		</figure>
+		<style>
+			.index h2 {
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+			}
+			.index p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+			}
+			.index p a {
+				color:#FFF;
+			}
+			.index .cover {
+				width: 100%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Справочники и спецификации</h2>
+		<ul>
+			<li><a href="https://developer.mozilla.org/ru/">Mozilla Developer Network</a></li>
+			<li><a href="http://msdn.microsoft.com/">MSDN</a></li>
+			<li><a href="https://developer.apple.com/library/safari/navigation/index.html">Safari Developer Library</a></li>
+			<li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">Спецификация ECMAScript</a></li>
+			<li><a href="http://esprima.org/index.html">Парсер</a></li>
+		</ul>
+	</section>
+
+	<section class="slide keys">
+		<h2>Ключевые особенности языка</h2>
+		<center>
+			<p class="">Интерпретируемый</p>
+			<p class="">Однопоточный</p>
+			<p class="">Асинхронный</p>
+			<p class="">Динамический</p>
+			<p class="">Клиентский</p>
+		</center>
+		<style media="screen">
+			.keys p {
+				font-size: 36px;
+				margin: 0px;
+			}
+		</style>
+	</section>
+
+	<section class="slide plan">
+		<h2>Зарезервированные слова</h2>
+		<div class="box">
+				<ul>
+					<li>break</li>
+					<li>default</li>
+					<li>function</li>
+					<li>return</li>
+					<li>var</li>
+					<li>case</li>
+					<li>delete</li>
+					<li>if</li>
+					<li>switch</li>
+					<li>throw</li>
+				</ul>
+				<ul>
+				<li>void</li>
+					<li>catch</li>
+					<li>do</li>
+					<li>in</li>
+					<li>this</li>
+					<li>while</li>
+					<li>const</li>
+					<li>else</li>
+					<li>instanceof</li>
+				</ul>
+				<ul>
+					<li>with</li>
+					<li>continue</li>
+					<li>finally</li>
+					<li>let</li>
+					<li>try</li>
+					<li>debugger</li>
+					<li>for</li>
+					<li>new</li>
+					<li>typeof</li>
+			</ul>
+		</div>
+		<style media="screen">
+			.plan {
+				padding-top: 60px;
+			}
+			.plan .box {
+				display: grid;
+				height: 100%;
+				grid-template-columns: 1fr 1fr 1fr
+			}
+			.plan .box ul {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide interaction">
+		<h2>Взаимодействие с пользователем</h2>
+		<pre style="margin-top: 100px; font-size: 30px;">
+			<code>	alert(message)</code>
+			<code>	prompt(title, default)</code>
+			<code>	confirm(question)</code>
+		</pre>
+	</section>
+
+	<section class="slide branches">
+		<h2>Операторы ветвления</h2>
+		<pre style="margin-top: 100px; font-size: 30px;">
+			<code>	if / else / else if</code>
+			<code>	? : <span class="comment">// Условная тернарная операция</span></code>
+			<code>	switch / case</code>
+		</pre>
+	</section>
+
+	<section class="slide loops">
+		<h2>Циклы</h2>
+		<pre style="margin-top: 100px; font-size: 30px;">
+			<code>	while</code>
+			<code>	do / while</code>
+			<code>	for / for in</code>
+		</pre>
+	</section>
+
+	<section class="slide function">
+		<h2>Функции</h2>
+		<pre style="margin-top: 60px; font-size: 25px;">
+			<code>	function [ <mark>functionName</mark> ] (arg1, arg2 ..., argN) {</code>
+			<code>		тело функции;</code>
+			<code>		[ возвращаемый результат ]</code>
+			<code>	}</code>
+			<code>&nbsp;</code>
+			<code>	<mark>functionName()</mark><span class="comment">	// вызов функции</span></code>
+		</pre>
+
+	</section>
+
+	<section class="slide function">
+		<h2>Методы работы с массивами</h2>
+		<ul style="font-size: 20px;">
+			<li>push/pop, shift/unshift, splice – для добавления и удаления элементов.</li>
+			<li>join/split – для преобразования строки в массив и обратно.</li>
+			<li>slice – копирует участок массива.</li>
+			<li>sort – для сортировки массива. Если не передать функцию сравнения – сортирует элементы как строки.</li>
+			<li>reverse – меняет порядок элементов на обратный.</li>
+			<li>concat – объединяет массивы.</li>
+			<li>indexOf/lastIndexOf – возвращают позицию элемента в массиве (не поддерживается в IE8-).</li>
+		</ul>
+	</section>
+
+	<section class="slide programming-types">
+		<h2>Подходы программирования</h2>
+		<center>
+			<img class="" width="100%" src="./pictures/prog-types.png" alt="">
+		</center>
+		<style media="screen">
+			.programming-types {
+				padding-top: 50px;
+			}
+		</style>
+	</section>
+
+	<section class="slide oop">
+		<h2>OOП - Объектно-ориенторованное программирование</h2>
+		<p class="">Методология программирования, основанная на представлении программы в виде совокупности обьектов, каждый из которых является экземпляром определенного класса</p>
+		<center class="">
+			<p style="margin-bottom: 0px;"><small>Абстрактный пример архитектуры интернет магазина с использованием ООП</small></p>
+			<img style="width: 60%" src="./pictures/oop-example.jpg" alt="">
+		</center>
+		<style media="screen">
+		  .oop {
+		  	padding-top: 70px;
+		  }
+			.oop h2 {
+				font-size: 37px;
+			}
+			.oop p {
+				font-size: 18px;
+				line-height: 1.4;
+			}
+		</style>
+	</section>
+
+	<section class="slide object">
+		<h2>Обьект</h2>
+		<p class="">Обычная переменная которая может иметь свойства и методы</p>
+		<center>
+			<img class="" style="width: 60%;" src="pictures/object.png" alt="">
+		</center>
+		<style media="screen">
+			.object {
+				padding-top: 40px;
+			}
+			.object p {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide oop-class">
+		<h2>Классы</h2>
+		<p class="">Класс - это "чертеж" по которому создаются новые обьекты</p>
+		<center>
+			<img class="" src="./pictures/class.png" alt="">
+		</center>
+		<style media="screen">
+			.oop-class {
+				padding-top: 40px;
+			}
+			.oop-class p {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide oop-princip">
+		<h2>Основные принципы объектно-ориентированного программирования</h2>
+		<ul>
+			<li class=""><strong>Наследования</strong> – позволяет создавать новый класс на базе другого.</li>
+			<li class=""><strong>Полиморфизм</strong> – это способность объектов с одним интерфейсом иметь различную реализацию</li>
+			<li class=""><strong>Абстракция</strong> – позволяет выделять из некоторой сущности только необходимые характеристики и методы, которые в полной мере описывают объект. Непосредственно связанн с инкапсуляцией</li>
+			<li class=""><strong>Инкапсуляция</strong> – позволяет скрывать внутреннюю реализацию.</li>
+		</ul>
+		<style>
+			.oop-princip {
+				padding-top: 50px;
+			}
+			.oop-princip h2 {
+				margin-bottom: 50px;
+			}
+			.oop-princip li {
+				line-height: 24px;
+				margin-bottom: 30px;
+			}
+		</style>
+	</section>
+
+	<section class="slide oop-plus">
+		<h2>Плюсы ООП</h2>
+		<ul>
+			<li class="">Абстракция от деталей реализации</li>
+			<li class="">Модульность</li>
+			<li class="">Ре-используемый компоненты</li>
+			<li class="">Возможность создавать расширяемые системы</li>
+			<li class="">Универсальность</li>
+		</ul>
+	</section>
+
+	<section class="slide oop-minus">
+		<h2>Минусы ООП</h2>
+		<ul>
+			<li class="">Некоторое снижение быстродействия за счет более сложной архитектуры</li>
+			<li class="">Использование "четких" парадигм, методологий и шаблонов проектирования</li>
+			<li class="">Проектирование - задача куда более сложная, чем использование</li>
+			<li class="">Сложных иерархии классов. Не всегда легко определить, какие поля и методы относятся к данному классу.</li>
+			<li class="">Излишняя универсальность</li>
+		</ul>
+		<style>
+			.oop-minus li {
+				line-height: 24px;
+				margin-bottom: 30px;
+			}
+		</style>
+	</section>
+
+	<section class="slide modify">
+		<h2>Модицикация обьектов</h2>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="node_modules/shower-core/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
